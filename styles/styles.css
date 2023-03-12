@@ -1,0 +1,94 @@
+html {
+    scroll-behavior: smooth;
+    font-family: 'Comic Neue', cursive;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 20px;
+    padding: 10px;
+    background-color: white;
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+h2 {
+    text-align: center;
+}
+
+image {
+    max-width: 100%;
+
+}
+
+.hero {
+    display: grid;
+    gap: 5px;
+    padding: 5px;
+    align-self: center;
+    grid-template-rows: 5% 3% 3% 3% 3% 5% 2fr 2fr 6%;
+    border: 1.5px solid rgb(63, 60, 60);
+    border-radius: 40px;
+    box-shadow: insert;
+}
+
+.hero__info {
+    text-align: justify;
+}
+
+.hero__image {
+    text-align: center;
+}
+
+.rating-area {
+    overflow: hidden;
+    width: 265px;
+    margin: 0 auto;
+}
+
+.rating-area:not(:checked)>input {
+    display: none;
+}
+
+.rating-area:not(:checked)>label {
+    float: right;
+    width: 42px;
+    padding: 0;
+    cursor: pointer;
+    font-size: 32px;
+    line-height: 32px;
+    color: lightgrey;
+    text-shadow: 1px 1px #bbb;
+}
+
+.rating-area:not(:checked)>label:before {
+    content: '★';
+}
+
+.rating-area>input:checked~label {
+    color: gold;
+    text-shadow: 1px 1px #c60;
+}
+
+.rating-area:not(:checked)>label:hover,
+.rating-area:not(:checked)>label:hover~label {
+    color: gold;
+}
+
+.rating-area>input:checked+label:hover,
+.rating-area>input:checked+label:hover~label,
+.rating-area>input:checked~label:hover,
+.rating-area>input:checked~label:hover~label,
+.rating-area>label:hover~input:checked~label {
+    color: gold;
+    text-shadow: 1px 1px goldenrod;
+}
+
+.rate-area>label:active {
+    position: relative;
+}
