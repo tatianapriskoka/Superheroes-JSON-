@@ -5,6 +5,7 @@ const main = document.querySelector('.container');
 const superHeroes = JSON.parse(jsonHeroes);
 
 document.addEventListener('DOMContentLoaded', function (event) {
+    // заполнение страницы контентом
     let content = '';
     for (let hero of superHeroes) {
         content += `
@@ -35,15 +36,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
         `
     }
     main.innerHTML = content;
-
+    // функция для сохранения данных в локальном хранилище
     for (let hero of superHeroes) {
         const choice = document.getElementById(`${hero.name}`);
         choice.onclick = function (el) {
-            const rating = Array.from(el.currentTarget.children).filter((item) => {
-                return item.checked === true;
-            });
-            window.localStorage.setItem(`${hero.name}`, rating[0].value)
+            const rating = el.target.value;
+            window.localStorage.setItem(`${hero.name}`, rating)
         };
     }
 });
+
+// удаление данных из хранилища
 window.localStorage.clear();
